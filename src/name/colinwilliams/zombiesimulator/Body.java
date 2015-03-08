@@ -7,7 +7,7 @@ import java.util.HashSet;
 import name.colinwilliams.dotcollision.Dot;
 
 public class Body {
-    Personality personality;
+    private Personality personality;
 
     public Body(boolean undead, Point center) {
 	this(undead, new Dot(center, 5));
@@ -21,7 +21,7 @@ public class Body {
     }
 
     public boolean is_undead() {
-	return personality.undead;
+	return personality.is_undead();
     }
 
     public Dot get_dot() {

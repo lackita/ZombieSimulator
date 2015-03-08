@@ -12,7 +12,7 @@ public class Battlefield {
     private Window window;
     private Random positions;
     private int size;
-    HashMap<Dot, Body> bodies;
+    private HashMap<Dot, Body> bodies;
 
     public Battlefield(int size) {
 	window = new Window(size);

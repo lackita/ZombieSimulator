@@ -5,9 +5,9 @@ import java.awt.Point;
 import java.util.HashSet;
 
 public class Dot {
-    Point center;
+    private Point center;
     private int radius;
-    Color color;
+    private Color color;
     private Dot previous;
 
     public Dot(Point center, int radius, Color color) {
@@ -50,20 +50,21 @@ public class Dot {
 	Point top_left_corner = calculate_containing_square_corner(new Point(center.x - radius, center.y - radius));
 	for (int x = top_left_corner.x;x <= center.x + radius;x += 10) {
 	    for (int y = top_left_corner.y;y <= center.y + radius;y += 10) {
-		corners.add(square_corner_containing(x, y));
+		corners.add(square_corner_containing(new Point(x, y)));
 	    }
 	}
 	
 	return corners;
     }
 
-    public Point square_corner_containing(int x, int y) {
-	if (x < 0 && x % 10 != 0) x -= 10;
-	if (y < 0 && y % 10 != 0) y -= 10;
-	x += Math.abs(x % 10);
-	y += Math.abs(y % 10);
+    private Point square_corner_containing(Point p) {
+	Point square_corner = new Point(p.x, p.y);
+	if (p.x < 0 && p.x % 10 != 0) square_corner.x -= 10;
+	if (p.y < 0 && p.y % 10 != 0) square_corner.y -= 10;
+	square_corner.x += Math.abs(square_corner.x % 10);
+	square_corner.y += Math.abs(square_corner.y % 10);
 	
-	return new Point(x, y);
+	return square_corner;
     }
 
     private Point calculate_containing_square_corner(Point point) {
@@ -85,6 +86,5 @@ public class Dot {
     public void restore_previous_center() {
 	center.x = previous.center.x;
 	center.y = previous.center.y;
-	previous = null;
     }
 }

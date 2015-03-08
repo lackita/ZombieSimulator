@@ -15,7 +15,7 @@ import name.colinwilliams.dotcollision.DotCollider;
 public class Window {
     private DotCollider dots;
     private int size;
-    JFrame frame;
+    private JFrame frame;
     public Window(int size) {
 	dots = new DotCollider();
 	this.size = size;

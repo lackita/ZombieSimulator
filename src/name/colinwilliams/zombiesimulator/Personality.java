@@ -8,12 +8,10 @@ import name.colinwilliams.dotcollision.Dot;
 
 public abstract class Personality {
 
-    protected boolean undead;
-    Dot dot;
+    protected Dot dot;
     private Random move_generator;
 
     public Personality(boolean undead, Dot dot) {
-	this.undead = undead;
 	this.dot = dot;
 	move_generator = new Random();
     }
