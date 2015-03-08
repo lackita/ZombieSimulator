@@ -85,5 +85,6 @@ public class Dot {
     public void restore_previous_center() {
 	center.x = previous.center.x;
 	center.y = previous.center.y;
+	previous = null;
     }
 }

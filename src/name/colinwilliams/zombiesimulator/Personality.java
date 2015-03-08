@@ -49,7 +49,7 @@ public abstract class Personality {
     protected int calculate_y_towards(Body closest) {
 	return calculate_axis_distance(dot.get_center().y, closest.get_dot().get_center().y);
     }
-
+    
     private int calculate_axis_distance(int origin, int direction) {
 	int distance;
 	if (origin < direction)

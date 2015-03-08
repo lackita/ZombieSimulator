@@ -29,7 +29,7 @@ public class Battlefield {
 
     private void place_bodies() {
 	for(int i = 0;i < size / 4;++i) {
-	    add_body(new Body(i % 16 == 0, random_point()));
+	    add_body(new Body(i % 4 == 0, random_point()));
 	}
     }
 

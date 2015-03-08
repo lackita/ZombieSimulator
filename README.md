@@ -9,4 +9,4 @@ Here are the rules for how this program behaves:
 - Humans change to zombies if zombies touch them
 - If a human gets close to a zombie, it runs away from it
 - If a zombie gets close to a human, it walks towards it
-- For all other movement, they will continue in whatever direction they were going previously
+- All other movement is random

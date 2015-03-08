@@ -21,7 +21,7 @@ public class Human extends Personality {
         Body closest = find_closest_opponent(nearby);
         if (closest != null)
 	    dot.move(-2 * calculate_x_towards(closest), -2 * calculate_y_towards(closest));
-	else
+        else
             move_randomly();
     }
 
